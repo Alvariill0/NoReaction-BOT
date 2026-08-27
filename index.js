@@ -9,7 +9,7 @@ const client = new Client({
     ],
 });
 
-// Nombre exacto del canal (sin emojis Unicode si da problemas)
+// Nombre exacto del canal 
 const TARGET_CHANNEL = '🤣◥haha-funny◤🤣';
 
 // Detecta URLs en el mensaje
@@ -29,7 +29,8 @@ client.on('messageCreate', async (message) => {
   // Comprobar si el mensaje contiene un enlace
     if (!URL_REGEX.test(message.content)) return;
 
-    try {
+    // reacciones
+    try { 
         await message.react('⬆️');
         await message.react('⬇️');
     } catch (err) {
